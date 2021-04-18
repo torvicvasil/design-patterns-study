@@ -1,5 +1,7 @@
-class Animal(object):
+from abc import ABC, abstractmethod
+class Animal(ABC):
 	"""docstring for Animal"""
+	@abstractmethod
 	def __init__(self, name, sex, age, weight, color):
 		self.name = name
 		self.sex = sex
@@ -7,17 +9,25 @@ class Animal(object):
 		self.weight = weight
 		self.color = color
 
+	@abstractmethod
 	def breath(self):
-		print("Breathing as an Animal.")
+		pass
 
+	@abstractmethod
 	def eat(self, food):
-		print(f"Eating {food} as an Animal.")
+		pass
 
+	@abstractmethod
 	def run(self, destination):
-		print(f"Running to {destination} as an Animal.")
+		pass
 
+	@abstractmethod
 	def sleep(self, hours):
-		print(f"Sleeping {hours} hours as an Animal.")
+		pass
+
+	@abstractmethod
+	def make_sound(self):
+		pass
 
 if __name__ == '__main__':
 	animal_instance = Animal("Horse", "Male", "10", 100, "Black")
@@ -25,4 +35,5 @@ if __name__ == '__main__':
 	animal_instance.eat("grass")
 	animal_instance.run("Brazil")
 	animal_instance.sleep(10)
+	animal_instance.make_sound(self)
 
